@@ -235,7 +235,7 @@ func (m *RabbitMqClient) connectToBroker() error {
 	}
 
 	var err error
-	m.conn, err = amqp.Dial(fmt.Sprintf("%s/", m.url))
+	m.conn, err = amqp.Dial(fmt.Sprintf("%s", m.url))
 	if err != nil {
 		return errors.New("failed to connect to AMQP compatible broker at: " + m.url + err.Error())
 	}
